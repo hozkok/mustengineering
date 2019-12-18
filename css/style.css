@@ -1,0 +1,109 @@
+body {
+    background-color: #111111;
+    color: #AAAAAA;
+    text-align: center;
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: "Open Sans";
+}
+
+a {
+    text-decoration: none;
+}
+
+blockquote {
+  /*background: #f9f9f9;*/
+  border-left: 10px solid #ccc;
+  text-align: left;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+
+blockquote:before {
+  color: #ccc;
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+
+blockquote p {
+  /*display: inline;*/
+  font-style: italic;
+}
+
+.header {
+    padding: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.header-left {
+    float: left;
+}
+
+.header-left a {
+    font-size: 20px;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+}
+
+.header-left .logo-title {
+    margin-left: 10px;
+}
+
+.header-left .logo-img {
+    height: auto;
+}
+
+.header-right {
+    margin-left: auto;
+}
+
+.header-right-item {
+    font-size: 20px;
+    color: #ffffff;
+    margin: 10px;
+}
+
+.note {
+    margin: 5px;
+}
+
+.signature {
+    font-size: 0.8em;
+}
+
+.focused-letter {
+    color: red;
+    font-style: normal;
+    font-size: 1.0em;
+}
+
+.main-container {
+    max-width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.header-item-active {
+    color: coral;
+}
+
+.header-right-item:hover {
+    color: coral;
+}
+
+@media only screen and (max-width: 768px) {
+    .main-container {
+        max-width: 95%;
+    }
+
+    body {
+        font-size: 20px;
+    }
+}
