@@ -107,3 +107,7 @@ blockquote p {
         font-size: 20px;
     }
 }
+
+.copyright {
+    font-size: 0.7em;
+}
