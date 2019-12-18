@@ -2,7 +2,7 @@ body {
     background-color: #111111;
     color: #AAAAAA;
     text-align: center;
-    font-size: 18px;
+    font-size: 17px;
     line-height: 1.5;
     font-family: "Open Sans";
 }
@@ -92,6 +92,8 @@ blockquote p {
 
 .header-item-active {
     color: coral;
+    border-color: coral;
+    border-bottom: 1px solid coral;
 }
 
 .header-right-item:hover {
