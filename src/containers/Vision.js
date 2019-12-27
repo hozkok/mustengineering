@@ -16,9 +16,6 @@ export default () => {
       </h1>
       <Row className="main-content justify-content-lg-center">
         <Col lg={8}>
-          <BlockQuote footer={quote.footer} content={quote.content} />
-        </Col>
-        <Col lg={8}>
           <p className="lead text-center">
             To establish a reliable bridge between tomorrow's dreams and
             today's practice.
@@ -28,6 +25,9 @@ export default () => {
             worksite, will be the mortar of that bridge to make your dreams
             reality.
           </p>
+        </Col>
+        <Col lg={8}>
+          <BlockQuote footer={quote.footer} content={quote.content} />
         </Col>
       </Row>
     </div>

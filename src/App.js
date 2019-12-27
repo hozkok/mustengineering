@@ -19,7 +19,7 @@ function App() {
   return (
     <Root>
       <Container fluid className="wrapper min-100 d-flex flex-column padding-0">
-        <Navbar
+        <Navbar collapseOnSelect
             sticky="top"
             bg="dark"
             variant="dark"

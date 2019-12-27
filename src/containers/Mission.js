@@ -24,10 +24,7 @@ export default () => {
         Our Mission
       </h1>
       <Row className="main-content justify-content-lg-center">
-        <Col lg={8} className="main-content">
-          <BlockQuote footer={quote.footer} content={quote.content} />
-        </Col>
-        <Col lg={8} className="main-content">
+        <Col lg={6}>
           <ListGroup variant="flush" style={{textAlign: 'left'}}>
             {missions.map((mission, i) => (
               <ListGroup.Item key={i} style={{backgroundColor: 'inherit'}}>
@@ -38,6 +35,9 @@ export default () => {
               </ListGroup.Item>
             ))}
           </ListGroup>
+        </Col>
+        <Col lg={8} className="main-content">
+          <BlockQuote footer={quote.footer} content={quote.content} />
         </Col>
       </Row>
     </div>
