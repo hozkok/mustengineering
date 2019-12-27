@@ -1,31 +1,25 @@
-import path from 'path'
-import axios from 'axios'
-
 export default {
   getRoutes: async () => {
-    const { data: posts } = await axios.get(
-      'https://jsonplaceholder.typicode.com/posts'
-    )
-
     return [
       {
-        path: '/team',
+        path: '/',
+        template: 'src/containers/Home',
       },
       {
         path: '/vision',
+        template: 'src/containers/Vision',
       },
       {
         path: '/mission',
+        template: 'src/containers/Mission',
+      },
+      {
+        path: '/team',
+        template: 'src/containers/Team',
       },
     ]
   },
   plugins: [
-    [
-      require.resolve('react-static-plugin-source-filesystem'),
-      {
-        location: path.resolve('./src/pages'),
-      },
-    ],
     require.resolve('react-static-plugin-reach-router'),
     require.resolve('react-static-plugin-sitemap'),
   ],
