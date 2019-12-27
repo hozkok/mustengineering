@@ -27,7 +27,7 @@ function App() {
             className="flex-shrink-0">
           <Navbar.Brand>
             <img
-              src="img/must_logo_small.jpg"
+              src="/img/must_logo_small.jpg"
               height="30"
               className="d-inline-block align-top"
               alt="Must Engineering" />{' '}
