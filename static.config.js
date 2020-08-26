@@ -1,4 +1,5 @@
 export default {
+  siteRoot: 'https://hozkok.github.io/mustengineering',
   getRoutes: async () => {
     return [
       {
