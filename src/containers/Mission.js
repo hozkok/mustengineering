@@ -5,11 +5,11 @@ import BlockQuote from 'components/Quote'
 import ListGroup from 'react-bootstrap/ListGroup'
 
 export default () => {
-  const quote = {
-    footer: 'Steve Jobs',
-    content: `Design is not how it looks like and feels like. Design is how it
-              works.`
-  }
+  // const quote = {
+  //   footer: 'Steve Jobs',
+  //   content: `Design is not how it looks like and feels like. Design is how it
+  //             works.`
+  // }
   const missions = [
     `Adding the value to the engineering practice that perfectly matches to the needs of the client.`,
     `Adopting the latest technological potentials to deliver fastest and most reliable engineering services.`,
@@ -24,7 +24,7 @@ export default () => {
         Our Mission
       </h1>
       <Row className="main-content justify-content-lg-center">
-        <Col lg={6}>
+        <Col lg={8}>
           <ListGroup variant="flush" style={{textAlign: 'left'}}>
             {missions.map((mission, i) => (
               <ListGroup.Item key={i} style={{backgroundColor: 'inherit'}}>
@@ -36,9 +36,9 @@ export default () => {
             ))}
           </ListGroup>
         </Col>
-        <Col lg={8} className="main-content">
+        {/*<Col lg={8} className="main-content">
           <BlockQuote footer={quote.footer} content={quote.content} />
-        </Col>
+        </Col>*/}
       </Row>
     </div>
   )
