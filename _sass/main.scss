@@ -1,25 +1,20 @@
 body {
-    background-color: #111111;
-    color: #AAAAAA;
-    text-align: center;
-    font-family: "Open Sans";
 }
 
-.main-header {
-    font-size: 2em;
-    margin: 20px 0 20px 0;
+.featurette-divider {
+    margin: 5rem 0;
 }
 
-.note {
-    margin: 5px;
+.lead {
+    font-size: 1.25rem;
+    font-weight: 300;
 }
 
-.signature {
-    font-size: 0.8em;
+.navbar-nav > li{
+  margin-left:20px;
+  margin-right:20px;
 }
 
-.focused-letter {
-    color: red;
-    font-style: normal;
-    font-size: 1.0em;
+img {
+   // max-width: 100%;
 }
