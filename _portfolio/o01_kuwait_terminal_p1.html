@@ -1,0 +1,96 @@
+---
+layout: default
+
+title: "Kuwait International Airport Project"
+project_type: Aviation
+preview_img: /assets/images/portfolio/o01_kuwait_terminal_p1/1.jpg
+project_status: ongoing
+description: |
+  Design Coordination and Consultancy Services for  13m passenger capacity $
+  4.4billion Mega Airport
+  <br/>
+  Project Contractor: Limak Insaat SPC / Kuwait
+images:
+  - /assets/images/portfolio/o01_kuwait_terminal_p1/1.jpg
+details:
+  - image: /assets/images/portfolio/o01_kuwait_terminal_p1/IMG_1547.JPG
+    description: |
+      Main roof Primary Structure: Precast post tensioned concrete elements
+      with cable stays 807 Precast pieces from 100tons to 360tons
+  - image: /assets/images/portfolio/o01_kuwait_terminal_p1/IMG_1548.JPG
+    description: |
+      Precast pieces casted at site factory with special adjustable formworks
+    reversed: true
+  - highlight: SPMT carrying precast piece
+    description: |
+      Main precast elements were erected with a team of crawler cranes with the
+      capacities of 300tons/600tons/1200tons/1600tons which were supported with
+      SPMT’s (Self-Propelled Modular Transporters)
+    image: /assets/images/portfolio/o01_kuwait_terminal_p1/20191218_133318(0).jpg
+  - highlight: Erection of the last precast piece
+    image: /assets/images/portfolio/o01_kuwait_terminal_p1/last-precast-arch-installation.jpg
+    reversed: true
+  - description: |
+      3milion meter post tension strands, 1million meter stay cable strands,
+      tensioned to <span class="text-danger">90%</span> Guts
+    image1: /assets/images/portfolio/o01_kuwait_terminal_p1/20191209_103926.jpg
+    image2: /assets/images/portfolio/o01_kuwait_terminal_p1/20191209_103926_BIM.png
+  - description: |
+      Temporary steel towers of <span class="text-danger">62.000 tons</span> for
+      the precast primary roof elements supporting the shell cassettes.
+    image1: /assets/images/portfolio/o01_kuwait_terminal_p1/Z7A7654.jpg
+    image2: /assets/images/portfolio/o01_kuwait_terminal_p1/Z7A7654_BIM.png
+  - description: |
+      Special detailing for the tower top parts to support temporary conditions
+      to 	withstand/release some translational and rotational degrees of
+      freedom at specified 	temporary conditions with aid of sliding and
+      rotational mechanisms, torsional restraints etc.
+    image1: /assets/images/portfolio/o01_kuwait_terminal_p1/2945-2951.jpg
+    image2: /assets/images/portfolio/o01_kuwait_terminal_p1/2945-2951_BIM.png
+---
+
+<h1>{{ page.title }}</h1>
+<p class="lead">{{ page.description }}</p>
+{{ content }}
+
+<div class="row w-100 justify-content-center">
+  <img class="img-fluid" src="{{ page.preview_img }}"/>
+</div>
+
+{% include item-margin.html %}
+
+<div class="row">
+  <h2 class="featurette-heading">
+    What we built?
+  </h2>
+</div>
+
+{% for row in page.details %}
+  {% include divider.html %}
+  <div class="row align-items-center justify-content-center {% if row.reversed %} flex-row-reverse {% endif %}">
+    {% if row.image %} <!-- meaning, there is a single image, and a description -->
+      <div class="col-md-6 lead">
+        {% if row.highlight %}
+          <div class="text-danger">
+            {{ row.highlight }}
+          </div>
+        {% endif %}
+        {{ row.description }}
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="{{ row.image }}" class="img-fluid">
+      </div>
+    {% else %} <!-- there are two images and a description -->
+      <div class="col-md-12 lead text-center">
+        {{ row.description }}
+      </div>
+      {% include item-margin.html %}
+      <div class="col-md-6 text-center">
+        <img src="{{ row.image1 }}" class="img-fluid row-images">
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="{{ row.image2 }}" class="img-fluid row-images">
+      </div>
+    {% endif %}
+  </div>
+{% endfor %}
