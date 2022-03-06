@@ -27,6 +27,32 @@ body {
     }
 }
 
+.featurette-heading-2 {
+    font-weight: 200;
+    line-height: 1.3;
+    letter-spacing: -.05rem;
+}
+
+@media (min-width: 40em) {
+    .featurette-heading-2 {
+        font-size: 30px;
+    }
+}
+
+.featurette-heading-3 {
+    font-weight: 150;
+    line-height: 1.2;
+    letter-spacing: -.01rem;
+}
+
+@media (min-width: 40em) {
+    .featurette-heading-3 {
+        font-size: 25px;
+    }
+}
+
 .row-images {
     max-height: 360px;
 }
+
+$carousel-control-color: #00ff00;

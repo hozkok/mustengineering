@@ -3,14 +3,54 @@ layout: default
 title: Home
 ---
 
+{% assign featured_projects = site.portfolio | where: 'featured', true %}
+
 <div class="container">
-  <div class="row">
-    <img src="/assets/images/portfolio/o01_kuwait_terminal_p1/1.jpg" class="img-fluid">
+
+
+  <div id="carouselExampleCaptions" class="carousel slide carousel-dark" data-bs-ride="carousel">
+    <div class="carousel-indicators">
+      {% for item in featured_projects %}
+      <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="{{ forloop.index0 }}" {% if forloop.index0 == 0 %} aria-current="true" class="active"{% endif %} aria-label="Slide {{ forloop.index0 }}"></button>
+      {% endfor %}
+    </div>
+    <div class="carousel-inner ratio ratio-16x9">
+      {% for item in featured_projects %}
+      <div class="carousel-item{% if forloop.index0 == 0 %} active{% endif %}">
+          <img src="{{ item.preview_img }}" class="d-block w-100" alt="">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>{{ item.title }}</h5>
+            <p>{{ item.description }}</p>
+            <a href="{{ item.url }}" class="btn btn-outline-dark">
+              View project
+            </a>
+          </div>
+          <div class="carousel-caption d-block d-md-none">
+            <h5>{{ item.title }}</h5>
+            <a href="{{ item.url }}" class="btn btn-outline-dark">
+              View project
+            </a>
+          </div>
+        </div>
+      {% endfor %}
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
+
   {% include item-margin.html %}
-  <div class="row lead justify-content-center">
-    <h1 class="col text-center">Must Engineering & Consultancy</h1>
-  </div>
+    <!--h1 class="col text-center">Must Engineering & Consultancy</h1-->
+    <div class="row">
+      <div class="col text-center">
+      <img src="/assets/images/must-engineering-logo.jpeg" alt="" style="max-height: 200px;">
+      </div>
+    </div>
   {% include item-margin.html %}
   <div class="row lead justify-content-center">
     <div class="col-9">

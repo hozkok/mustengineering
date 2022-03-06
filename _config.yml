@@ -1,3 +1,4 @@
 collections:
   portfolio:
     output: true
+    sort_by: priority

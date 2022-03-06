@@ -1,0 +1,46 @@
+---
+layout: default
+---
+
+<h1>{{ page.title }}</h1>
+<p class="lead">{{ page.description }}</p>
+{{ content }}
+
+<div class="row w-100 justify-content-center">
+  <img class="img-fluid" src="{{ page.preview_img }}"/>
+</div>
+
+{% include item-margin.html %}
+
+{% if page.before_details %}
+  {{ page.before_details }}
+{% endif %}
+
+{% for row in page.details %}
+  {% include divider.html %}
+  <div class="row align-items-center justify-content-center gy-4 {% if row.reversed %} flex-row-reverse {% endif %}">
+    {% if row.image %} <!-- meaning, there is a single image, and a description -->
+      <div class="col-md-6 lead text-center featurette-heading-3">
+        {% if row.highlight %}
+          <div class="text-danger">
+            {{ row.highlight }}
+          </div>
+        {% endif %}
+        {{ row.description }}
+      </div>
+      <div class="col-md-6 text-center">
+        <img src="{{ row.image }}" class="img-fluid">
+      </div>
+    {% elsif row.images %} <!-- there are two images and a description -->
+      <div class="col-md-12 lead text-center featurette-heading-2">
+        {{ row.description }}
+      </div>
+      {% include item-margin.html %}
+      {% for img in row.images %}
+        <div class="col-md-6 text-center">
+          <img src="{{ img }}" class="img-fluid row-images">
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+{% endfor %}
