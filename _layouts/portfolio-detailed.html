@@ -6,8 +6,13 @@ layout: default
 <p class="lead">{{ page.description }}</p>
 {{ content }}
 
-<div class="row w-100 justify-content-center gallery-container">
+<div class="row w-100 justify-content-center gallery-container img-preview">
   <img class="img-fluid" src="{{ page.preview_img }}"/>
+  {% if page.preview_img_description %}
+    <span class="img-description transparent-bg-white">
+      {{ page.preview_img_description }}
+    </span>
+  {% endif %}
 </div>
 
 {% include item-margin.html %}
