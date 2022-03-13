@@ -3,7 +3,11 @@ layout: default
 title: Home
 ---
 
-{% assign featured_projects = site.portfolio | where: 'featured', true %}
+{% assign featured_projects = site.portfolio
+  | where: "featured", true
+  | reverse
+  | sort: "priority", "first"
+  | reverse %}
 
 <div class="container">
 
