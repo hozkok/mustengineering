@@ -18,14 +18,14 @@ title: Home
       {% for item in featured_projects %}
       <div class="carousel-item{% if forloop.index0 == 0 %} active{% endif %}">
           <img src="{{ item.preview_img }}" class="d-block w-100" alt="">
-          <div class="carousel-caption d-none d-md-block">
+          <div class="carousel-caption d-none d-md-block transparent-img-text">
             <h5>{{ item.title }}</h5>
             <p>{{ item.description }}</p>
             <a href="{{ item.url }}" class="btn btn-dark">
               View project
             </a>
           </div>
-          <div class="carousel-caption d-block d-md-none">
+          <div class="carousel-caption d-block d-md-none transparent-img-text">
             <h5>{{ item.title }}</h5>
             <a href="{{ item.url }}" class="btn btn-outline-dark">
               View project
@@ -35,11 +35,11 @@ title: Home
       {% endfor %}
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="carousel-control-prev-icon transparent-bg" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
     </button>
     <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="carousel-control-next-icon transparent-bg" aria-hidden="true"></span>
       <span class="visually-hidden">Next</span>
     </button>
   </div>
