@@ -1,8 +1,8 @@
 - name: About MUST
   link: /about.html
-- name: Previous References
-  link: /previous-references.html
 - name: Ongoing Projects
   link: /ongoing-projects.html
+- name: Previous References
+  link: /previous-references.html
 - name: Contact
   link: /contact.html
