@@ -2,7 +2,11 @@
 layout: default
 ---
 
-{% assign projects = site.portfolio | where: "project_status", page.projects_status %}
+{% assign projects = site.portfolio
+  | where: "project_status", page.projects_status
+  | reverse
+  | sort: "priority", "first"
+  | reverse %}
 
 <div class="container">
   {% include item-margin.html %}
