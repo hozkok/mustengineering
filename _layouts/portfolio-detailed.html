@@ -38,6 +38,11 @@ layout: default
       </div>
     {% elsif row.images %} <!-- there are two images and a description -->
       <div class="col-md-12 lead text-center featurette-heading-2">
+        {% if row.highlight %}
+        <div class="text-danger">
+          {{ row.highlight }}
+        </div>
+        {% endif %}
         {{ row.description }}
       </div>
       {% include item-margin.html %}
