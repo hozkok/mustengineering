@@ -34,7 +34,11 @@ layout: default
         {{ row.description }}
       </div>
       <div class="col-md-6 text-center gallery-container">
-        <img src="{{ row.image }}" class="img-fluid">
+        {% if image.thumbnail %}
+        <img src="{{ row.image.thumbnail }}" zoomed-src="{{ row.image.src }}" class="img-fluid">
+        {% else %}
+        <img src="{{ row.image }}" zoomed-src="{{ row.image }}" class="img-fluid">
+        {% endif %}
       </div>
     {% elsif row.images %} <!-- there are two images and a description -->
       <div class="col-md-12 lead text-center featurette-heading-2">
@@ -47,9 +51,20 @@ layout: default
       </div>
       {% include item-margin.html %}
       {% for img in row.images %}
-        <div class="col-md-6 text-center gallery-container">
-          <img src="{{ img }}" class="img-fluid row-images">
+      <div class="col-md-6 text-center gallery-container">
+        <div class="img-list-container">
+        {% if img.src %}
+        <img src="{{ img.thumbnail }}" zoomed-src="{{ img.src }}" class="img-fluid row-images"/>
+        {% else %}
+          <img src="{{ img }}" zoomed-src="{{ img }}" class="img-fluid row-images"/>
+        {% endif %}
+        {% if img.description %}
+        <span class="img-list-description transparent-bg-white">
+          {{ img.description }}
+        </span>
+        {% endif %}
         </div>
+      </div>
       {% endfor %}
     {% endif %}
   </div>

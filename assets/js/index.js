@@ -3,7 +3,8 @@ let imgSrc;
 // get images src onclick
 images.forEach((img) => {
     img.addEventListener("click", (e) => {
-        imgSrc = e.target.src;
+        zoomedSrc = e.target.getAttribute("zoomed-src");
+        imgSrc = zoomedSrc || e.target.src;
         //run modal function
         imgModal(imgSrc);
     });
