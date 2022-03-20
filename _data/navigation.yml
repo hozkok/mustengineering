@@ -1,5 +1,7 @@
 - name: About MUST
   link: /about.html
+- name: Corporate
+  link: /corporate.html
 - name: Ongoing Projects
   link: /ongoing-projects.html
 - name: Previous References
