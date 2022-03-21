@@ -1,0 +1,31 @@
+---
+layout: default
+title: About
+---
+
+
+{% for section in site.data.about.sections %}
+  <h1 class="featurette-heading"> {{ section.title }}</h1>
+  {% include item-margin.html spaces=2 %}
+
+  {% if section.description %}
+    <p class="featurette-heading-3"> {{ section.description }} </p>
+  {% endif %}
+  {% if section.subsections %}
+    {% for subsection in section.subsections %}
+      <h2> {{ subsection.title }} </h2>
+      <ul class="list-group list-group-flush list-group-custom">
+          {% for bullet in subsection.bullets %}
+          <li class="list-group-item featurette-heading-3">
+              {{ bullet }}
+          </li>
+          {% endfor %}
+      </ul>
+      {% unless forloop.last %}
+      {% include item-margin.html %}
+      {% endunless %}
+    {% endfor %}
+
+  {% endif %}
+  {% include item-margin.html %}
+{% endfor %}
