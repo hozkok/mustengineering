@@ -9,14 +9,14 @@ title: About
   {% include item-margin.html spaces=2 %}
 
   {% if section.description %}
-    <p class="featurette-heading-3"> {{ section.description }} </p>
+    <p class="featurette-heading-3 section-description"> {{ section.description }} </p>
   {% endif %}
   {% if section.subsections %}
     {% for subsection in section.subsections %}
       <h2> {{ subsection.title }} </h2>
       <ul class="list-group list-group-flush list-group-custom">
           {% for bullet in subsection.bullets %}
-          <li class="list-group-item featurette-heading-3">
+          <li class="list-group-item featurette-heading-3 py-3">
               {{ bullet }}
           </li>
           {% endfor %}
