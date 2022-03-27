@@ -7,7 +7,7 @@ layout: default
 {{ content }}
 
 <div class="row w-100 justify-content-center gallery-container img-preview">
-  <img class="img-fluid" src="{{ page.preview_img }}"/>
+  <img class="img-fluid" src="{{ page.preview_img }}" data-bs-toggle="modal" data-bs-target="#imgModal" data-bs-img-src="{{ page.preview_img }}"/>
   {% if page.preview_img_description %}
     <span class="img-description transparent-bg-white">
       {{ page.preview_img_description }}
@@ -35,9 +35,9 @@ layout: default
       </div>
       <div class="col-md-6 text-center gallery-container">
         {% if image.thumbnail %}
-        <img src="{{ row.image.thumbnail }}" zoomed-src="{{ row.image.src }}" class="img-fluid">
+        <img src="{{ row.image.thumbnail }}" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imgModal" data-bs-img-src="{{ row.image.src }}">
         {% else %}
-        <img src="{{ row.image }}" zoomed-src="{{ row.image }}" class="img-fluid">
+        <img src="{{ row.image }}" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imgModal" data-bs-img-src="{{ row.image }}">
         {% endif %}
       </div>
     {% elsif row.images %} <!-- there are two images and a description -->
@@ -54,9 +54,9 @@ layout: default
       <div class="col-md-6 text-center gallery-container">
         <div class="img-list-container">
         {% if img.src %}
-        <img src="{{ img.thumbnail }}" zoomed-src="{{ img.src }}" class="img-fluid row-images"/>
+        <img src="{{ img.thumbnail }}" zoomed-src="{{ img.src }}" class="img-fluid row-images" data-bs-toggle="modal" data-bs-target="#imgModal" data-bs-img-src="{{ img.src }}"/>
         {% else %}
-          <img src="{{ img }}" zoomed-src="{{ img }}" class="img-fluid row-images"/>
+          <img src="{{ img }}" zoomed-src="{{ img }}" class="img-fluid row-images" data-bs-toggle="modal" data-bs-target="#imgModal" data-bs-img-src="{{ img }}"/>
         {% endif %}
         {% if img.description %}
         <span class="img-list-description transparent-bg-white">

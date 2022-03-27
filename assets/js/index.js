@@ -1,54 +1,57 @@
-const images = document.querySelectorAll(".gallery-container img");
-let imgSrc;
-// get images src onclick
-images.forEach((img) => {
-    img.addEventListener("click", (e) => {
-        zoomedSrc = e.target.getAttribute("zoomed-src");
-        imgSrc = zoomedSrc || e.target.src;
-        //run modal function
-        imgModal(imgSrc);
-    });
-});
-//creating the modal
-let imgModal = (src) => {
-  const modal = document.createElement("div");
-  modal.setAttribute("class", "modal");
-  //add the modal to the main section or the parent element
-  document.querySelector(".main").append(modal);
-  //adding image to modal
-  const newImage = document.createElement("img");
-  newImage.setAttribute("src", src);
-  //creating the close button
-  const closeBtn = document.createElement("button");
-  closeBtn.setAttribute("class", "btn-close btn-close-white closeBtn");
-  closeBtn.setAttribute("type", "button");
-  closeBtn.setAttribute("aria-label", "Close");
-  //close function
-  closeBtn.onclick = () => {
-      modal.remove();
-  };
-  modal.onclick = ({ target }) => {
-    if (target === modal) {
-      modal.remove();
-    }
+function registerClasses(element, cssClasses) {
+  for (const cls of cssClasses) {
+    element.setAttribute("class", cls);
   }
+}
+
+function registerStyles(element, styles) {
+  for (const [key, value] of Object.entries(styles)) {
+    element.setAttribute(key, value);
+  }
+}
+
+
+function registerZoom(imgElem, mouseEventElem, initialClickEvent) {
+  function mouseMoveHandler (event) {
+    x = event.clientX/mouseEventElem.offsetWidth*100
+    y = event.clientY/mouseEventElem.offsetHeight*100
+    imgElem.style.transformOrigin = x + '% ' + y + '%';
+  }
+  mouseMoveHandler(initialClickEvent);
+  mouseEventElem.onmousemove = mouseMoveHandler;
+}
+
+function unregisterZoom(imgElem, mouseEventElem) {
+  mouseEventElem.onmousemove = undefined;
+}
+
+
+const imgModal = document.getElementById('imgModal');
+imgModal.addEventListener('show.bs.modal', (event) => {
+  const imgSrc = event.relatedTarget.getAttribute('data-bs-img-src');
+  var imgElem = imgModal.querySelector('.modal-body>img');
+  imgElem.src = imgSrc;
+  const modalDialog = imgModal.querySelector('.modal-dialog');
   let isZoomed = false;
-  newImage.onclick = () => {
+  imgElem.style.cursor = "zoom-in";
+  imgElem.onclick = (e) => {
     if (!isZoomed) {
-      modal.classList.add("modal-zoomed");
+      modalDialog.classList.add("modal-dialog-zoomed");
+      registerZoom(modalDialog, imgModal, e);
+      imgElem.style.cursor = "zoom-out";
       isZoomed = true;
     } else {
-      modal.classList.remove("modal-zoomed");
+      modalDialog.classList.remove("modal-dialog-zoomed");
+      unregisterZoom(modalDialog, imgModal);
+      imgElem.style.cursor = "zoom-in";
       isZoomed = false;
     }
   };
-  modal.append(newImage, closeBtn);
-};
-document.addEventListener("keydown", (event) => {
-  if (event.keyCode == 27) {
-    const modal = document.querySelector(".modal");
-    if (modal !== null) {
-      modal.remove();
-    }
-  }
-})
+});
+imgModal.addEventListener('hidden.bs.modal', (event) => {
+  const modalDialog = imgModal.querySelector('.modal-dialog');
+  const imgElem = imgModal.querySelector('.modal-body>img');
+  modalDialog.classList.remove("modal-dialog-zoomed");
+  imgElem.src = "";
+  unregisterZoom(modalDialog, imgModal);
+});
