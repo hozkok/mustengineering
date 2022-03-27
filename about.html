@@ -4,6 +4,7 @@ title: About
 ---
 
 
+<div class="container">
 {% for section in site.data.about.sections %}
   <h1 class="featurette-heading"> {{ section.title }}</h1>
   {% include item-margin.html spaces=2 %}
@@ -29,3 +30,4 @@ title: About
   {% endif %}
   {% include item-margin.html %}
 {% endfor %}
+</div>
