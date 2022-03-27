@@ -9,7 +9,7 @@ layout: default
 <div class="row w-100 gallery-container img-preview">
   <img class="img-fluid w-100" src="{{ page.preview_img }}" data-bs-toggle="modal" data-bs-target="#imgModal" data-bs-img-src="{{ page.preview_img }}"/>
   {% if page.preview_img_description %}
-    <span class="img-description transparent-bg-white">
+    <span class="img-description transparent-bg">
       {{ page.preview_img_description }}
     </span>
   {% endif %}
@@ -59,7 +59,7 @@ layout: default
           <img src="{{ img }}" zoomed-src="{{ img }}" class="img-fluid row-images" data-bs-toggle="modal" data-bs-target="#imgModal" data-bs-img-src="{{ img }}"/>
         {% endif %}
         {% if img.description %}
-        <span class="img-list-description transparent-bg-white">
+        <span class="img-list-description transparent-bg">
           {{ img.description }}
         </span>
         {% endif %}
