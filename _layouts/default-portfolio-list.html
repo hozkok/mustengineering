@@ -8,29 +8,27 @@ layout: default
   | sort: "priority", "first"
   | reverse %}
 
-<div class="container">
-  {% include item-margin.html %}
-  <h2> {{ page.title }} </h2>
-  {{ content }}
-  {% include item-margin.html %}
-  <hr>
-  <div class="row row-cols-1 row-cols-lg-3 row-cols-sm-2 gy-4">
-    {% for item in projects %}
-      <div class="col">
-        <div class="card">
-          {% if item.preview_img %}
-            <img src="{{ item.preview_img }}" class="card-img-top" alt="">
-          {% else %}
-            <img src="{{ item.images | first }}" class="card-img-top" alt="">
-          {% endif %}
-          <div class="card-body">
-            <h5 class="card-title">{{ item.title }}</h5>
-            <a href="{{ item.url }}" class="btn btn-outline-secondary">
-              View project
-            </a>
-          </div>
+{% include item-margin.html %}
+<h2> {{ page.title }} </h2>
+{{ content }}
+{% include item-margin.html %}
+<hr>
+<div class="row row-cols-1 row-cols-lg-3 row-cols-sm-2 gy-4">
+  {% for item in projects %}
+    <div class="col">
+      <div class="card">
+        {% if item.preview_img %}
+          <img src="{{ item.preview_img }}" class="card-img-top" alt="">
+        {% else %}
+          <img src="{{ item.images | first }}" class="card-img-top" alt="">
+        {% endif %}
+        <div class="card-body">
+          <h5 class="card-title">{{ item.title }}</h5>
+          <a href="{{ item.url }}" class="btn btn-outline-secondary">
+            View project
+          </a>
         </div>
       </div>
-    {% endfor %}
-  </div>
+    </div>
+  {% endfor %}
 </div>
