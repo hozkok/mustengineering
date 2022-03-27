@@ -6,8 +6,8 @@ layout: default
 <p class="lead">{{ page.description }}</p>
 {{ content }}
 
-<div class="row w-100 justify-content-center gallery-container img-preview">
-  <img class="img-fluid" src="{{ page.preview_img }}" data-bs-toggle="modal" data-bs-target="#imgModal" data-bs-img-src="{{ page.preview_img }}"/>
+<div class="row w-100 gallery-container img-preview">
+  <img class="img-fluid w-100" src="{{ page.preview_img }}" data-bs-toggle="modal" data-bs-target="#imgModal" data-bs-img-src="{{ page.preview_img }}"/>
   {% if page.preview_img_description %}
     <span class="img-description transparent-bg-white">
       {{ page.preview_img_description }}
