@@ -43,9 +43,9 @@ layout: default
     {% elsif row.images %} <!-- there are two images and a description -->
       <div class="col-md-12 lead text-center featurette-heading-2">
         {% if row.highlight %}
-        <div class="text-danger">
+        <p class="text-warning">
           {{ row.highlight }}
-        </div>
+        </p>
         {% endif %}
         {{ row.description }}
       </div>
