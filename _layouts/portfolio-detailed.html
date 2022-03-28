@@ -35,9 +35,9 @@ layout: default
       </div>
       <div class="col-md-6 text-center gallery-container">
         {% if image.thumbnail %}
-        <img src="{{ row.image.thumbnail }}" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imgModal" data-bs-img-src="{{ row.image.src }}">
+        <img src="{{ row.image.thumbnail }}" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imgModal" data-bs-img-src="{{ row.image.src }}" loading="lazy">
         {% else %}
-        <img src="{{ row.image }}" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imgModal" data-bs-img-src="{{ row.image }}">
+        <img src="{{ row.image }}" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imgModal" data-bs-img-src="{{ row.image }}" loading="lazy">
         {% endif %}
       </div>
     {% elsif row.images %} <!-- there are two images and a description -->
@@ -54,9 +54,9 @@ layout: default
       <div class="col-md-6 text-center gallery-container">
         <div class="img-list-container">
         {% if img.src %}
-        <img src="{{ img.thumbnail }}" zoomed-src="{{ img.src }}" class="img-fluid row-images" data-bs-toggle="modal" data-bs-target="#imgModal" data-bs-img-src="{{ img.src }}"/>
+          <img src="{{ img.thumbnail }}" zoomed-src="{{ img.src }}" class="img-fluid row-images" data-bs-toggle="modal" data-bs-target="#imgModal" data-bs-img-src="{{ img.src }}" loading="lazy"/>
         {% else %}
-          <img src="{{ img }}" zoomed-src="{{ img }}" class="img-fluid row-images" data-bs-toggle="modal" data-bs-target="#imgModal" data-bs-img-src="{{ img }}"/>
+          <img src="{{ img }}" zoomed-src="{{ img }}" class="img-fluid row-images" data-bs-toggle="modal" data-bs-target="#imgModal" data-bs-img-src="{{ img }}" loading="lazy"/>
         {% endif %}
         {% if img.description %}
         <span class="img-list-description transparent-bg">
