@@ -25,7 +25,7 @@ layout: default
   {% include divider.html %}
   <div class="row align-items-center justify-content-center gy-4 {% if row.reversed %} flex-row-reverse {% endif %}">
     {% if row.image %} <!-- meaning, there is a single image, and a description -->
-      <div class="col-md-6 lead text-center featurette-heading-3">
+      <div class="col-md-8 lead text-center featurette-heading-2 mb-3">
         {% if row.highlight %}
           <div class="text-danger">
             {{ row.highlight }}
@@ -33,7 +33,7 @@ layout: default
         {% endif %}
         {{ row.description }}
       </div>
-      <div class="col-md-6 text-center gallery-container">
+      <div class="col-md-6 col-9 text-center gallery-container">
         {% if image.thumbnail %}
         <img src="{{ row.image.thumbnail }}" class="img-fluid" data-bs-toggle="modal" data-bs-target="#imgModal" data-bs-img-src="{{ row.image.src }}" loading="lazy">
         {% else %}
@@ -41,17 +41,18 @@ layout: default
         {% endif %}
       </div>
     {% elsif row.images %} <!-- there are two images and a description -->
-      <div class="col-md-12 lead text-center featurette-heading-2">
-        {% if row.highlight %}
-        <p class="text-warning">
-          {{ row.highlight }}
-        </p>
-        {% endif %}
-        {{ row.description }}
+      <div class="col-md-8 lead text-center featurette-heading-2 mb-3">
+        <div class="container">
+          {% if row.highlight %}
+          <p class="text-warning">
+            {{ row.highlight }}
+          </p>
+          {% endif %}
+          {{ row.description }}
+        </div>
       </div>
-      {% include item-margin.html %}
       {% for img in row.images %}
-      <div class="col-md-6 text-center gallery-container">
+      <div class="col-md-6 col-9 text-center gallery-container">
         <div class="img-list-container">
         {% if img.src %}
           <img src="{{ img.thumbnail }}" zoomed-src="{{ img.src }}" class="img-fluid row-images" data-bs-toggle="modal" data-bs-target="#imgModal" data-bs-img-src="{{ img.src }}" loading="lazy"/>

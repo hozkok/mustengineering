@@ -6,14 +6,17 @@ title: Corporate
 <div class="container">
   <div class="row">
     {% for person in site.data.corporate %}
-      <div class="col-lg-6 p-5 border">
-        <h1>
-          <span class="featurette-heading-2">{{ person.name }} | </span> <span class="featurette-heading-3">{{ person.title }}</span>
-        </h1>
-        {% include item-margin.html spaces=2 %}
-        <p class="person-description">
-          {{ person.description }}
-        </p>
+      <div class="col-lg-6 border d-flex justify-content-center">
+        <div class="col-sm-9 pt-5 pb-5">
+          <h1>
+            <div class="featurette-heading-2 col-lg-6 d-lg-inline">{{ person.name }} |</div>
+            <div class="featurette-heading-3 col-lg-6 d-lg-inline">{{ person.title }}</div>
+          </h1>
+          {% include item-margin.html spaces=2 %}
+          <p class="person-description">
+            {{ person.description }}
+          </p>
+        </div>
       </div>
     {% endfor %}
   </div>
