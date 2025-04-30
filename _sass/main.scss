@@ -164,6 +164,25 @@ img.navbar-logo {
     line-height: 2.0rem;
 }
 
+.pulse {
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        opacity: 0.5;
+        //transform: scale(1);
+    }
+    50% {
+        opacity: 1;
+        //transform: scale(1.1);
+    }
+    100% {
+        opacity: 0.5;
+        //transform: scale(1);
+    }
+}
+
 
 @media (min-width: 576px) {
     img.navbar-logo {
