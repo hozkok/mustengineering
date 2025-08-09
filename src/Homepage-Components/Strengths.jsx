@@ -103,7 +103,7 @@ function Strengths() {
               <li>Value-Driven Solutions</li>
             </ol>
             <img
-              src="/whyMusteng/picture40.webp"
+              src="whyMustEng/picture40.webp"
               alt=""
               className="w-full shadow-elevation-high rounded-md lg:w-1/2 place-self-center"
             />
