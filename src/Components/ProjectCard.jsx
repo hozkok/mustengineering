@@ -30,8 +30,8 @@ function ProjectCard({ title, description, imgSrc }) {
   return (
     <>
       <motion.div
-        initial={{ translateX: "-100%" }}
-        whileInView={{ translateX: "0" }}
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
         transition={{ duration: 0.6 }}
         viewport={{ once: true }}
         className="flex flex-col md:grid md:grid-cols-10 rounded-md  md:h-[16rem] xl:h-[20rem] w-full lg:w-3/4  2xl:justify-center 2xl:items-center "
